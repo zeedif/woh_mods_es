@@ -3,7 +3,7 @@ import 'dart:io';
 
 // 1. EVENTOS
 final Set<String> _eventKeys = {
-  'name', 'author', 'flavor', 'about',
+  'name', 'flavor', 'about',
   'optiona', 'optionb', 'optionc',
   'successa', 'successb', 'successc',
   'failurea', 'failureb', 'failurec',
@@ -12,20 +12,20 @@ final Set<String> _eventKeys = {
 
 // 2. ENEMIGOS
 final Set<String> _enemyKeys = {
-  'name', 'subtitle', 'author', 'intro',
+  'name', 'subtitle', 'intro',
   'hit01', 'hit02', 'hit03',
 };
 
 // 3. PERSONAJES
 final Set<String> _characterKeys = {
-  'name', 'author',
+  'name',
   'name_a', 'name_b',
   'menu_tag', 'menu_desc', 'bio',
 };
 
 // 4. MISTERIOS
 final Set<String> _mysteryKeys = {
-  'name', 'author', 'description',
+  'name', 'description',
   'flavor', 'tags',
   'text_one', 'text_two', 'text_thr', 'text_fou',
   'location', // solo se usa para Misterios
@@ -97,7 +97,7 @@ Future<List<String>> _readLinesSafely(File file) async {
   final bytes = await file.readAsBytes();
   String content = utf8.decode(bytes, allowMalformed: true);
 
-  // Elimina el BOM (Byte Order Mark) si está presente al inicio del archivo
+  // Elimina el BOM (Byte Order Mark) oculto si está presente
   if (content.startsWith('\uFEFF')) {
     content = content.substring(1);
   }
@@ -120,17 +120,29 @@ Future<void> _extractToL10n(Directory modsDir, Directory l10nDir) async {
     final modId = _basename(modFolder.path);
     final jsonFile = File('${l10nDir.path}${Platform.pathSeparator}$modId.json');
 
-    Map<String, dynamic> manifest = jsonFile.existsSync()
-        ? jsonDecode(await jsonFile.readAsString())
-        : {
-            "mod_id": modId,
-            "mod_name": "Nombre del Mod",
-            "author_original": "",
-            "translator": "",
-            "files": <String, dynamic>{}
-          };
+    // Preservar traducciones previas si el archivo ya existe
+    Map<String, dynamic> existingData = {};
+    if (jsonFile.existsSync()) {
+      existingData = jsonDecode(await jsonFile.readAsString());
+    }
 
-    manifest["files"] ??= <String, dynamic>{};
+    final defaultUrl = RegExp(r'^\d+$').hasMatch(modId)
+        ? "https://steamcommunity.com/sharedfiles/filedetails/?id=$modId"
+        : "";
+
+    // Crear el manifest para forzar el orden de las claves en el JSON
+    Map<String, dynamic> manifest = {
+      "mod_id": modId,
+      "mod_name": existingData["mod_name"] ?? "",
+      "mod_url": existingData["mod_url"] ?? defaultUrl,
+      "authors": existingData["authors"] ?? <String>[],
+      "translator": existingData["translator"] ?? "",
+      "files": existingData["files"] ?? <String, dynamic>{}
+    };
+
+    // Extraemos las colecciones para modificarlas por referencia sin y no reasignarlas
+    final authorsList = manifest["authors"] as List<dynamic>;
+    final normalizedAuthors = authorsList.map((a) => a.toString().toLowerCase()).toSet();
     final filesMap = manifest["files"] as Map<String, dynamic>;
 
     final itoFiles = modFolder
@@ -139,6 +151,7 @@ Future<void> _extractToL10n(Directory modsDir, Directory l10nDir) async {
         .where((f) => f.path.endsWith('.ito'));
 
     int keysExtracted = 0;
+    String? firstItemName;
 
     for (final itoFile in itoFiles) {
       final relativePath = itoFile.path
@@ -149,14 +162,11 @@ Future<void> _extractToL10n(Directory modsDir, Directory l10nDir) async {
       final fileData = filesMap[relativePath] as Map<String, dynamic>;
 
       final lines = await _readLinesSafely(itoFile);
-
-      // Asumimos el grupo comodín por defecto
       Set<String> activeKeys = _fallbackKeys;
 
       for (final line in lines) {
         final trimmedLine = line.trim();
 
-        // Detectar el tipo de archivo dinámicamente y asignar el set correcto
         if (trimmedLine == '[event]') {
           activeKeys = _eventKeys;
         } else if (trimmedLine == '[enemy]') {
@@ -172,33 +182,37 @@ Future<void> _extractToL10n(Directory modsDir, Directory l10nDir) async {
           final key = match.group(1)!;
           final value = match.group(2)!;
 
-          if (key == 'author' && manifest["author_original"] == "") {
-            manifest["author_original"] = value;
+          if (key == 'author' && value.trim().isNotEmpty) {
+            final lowerAuthor = value.trim().toLowerCase();
+            if (!normalizedAuthors.contains(lowerAuthor)) {
+              normalizedAuthors.add(lowerAuthor);
+              authorsList.add(value.trim());
+            }
           }
-          if (key == 'name' && manifest["mod_name"] == "Nombre del Mod") {
-            manifest["mod_name"] = value;
+          
+          if (key == 'name' && firstItemName == null && value.trim().isNotEmpty) {
+            firstItemName = value.trim();
           }
 
           if (activeKeys.contains(key)) {
-            // EXCEPCIÓN: Si la clave es 'location', verificar que su VALOR
-            // no sea uno de los códigos internos del juego.
             if (key == 'location' && _nonTranslatableLocations.contains(value)) {
-              // Es un código interno, no hacer nada y continuar con la siguiente línea.
               continue; 
             }
 
-            // Si pasa el filtro, es una clave traducible.
             if (!fileData.containsKey(key)) {
               fileData[key] = {"original": value, "l10n": ""};
               keysExtracted++;
             } else if (fileData[key]["original"] != value) {
-              // El autor actualizó el mod, se sobrescribe el original para que concuerde.
               fileData[key]["original"] = value;
               print("  [AVISO] El texto original de '$key' en '$relativePath' ha cambiado tras una actualización.");
             }
           }
         }
       }
+    }
+
+    if (manifest["mod_name"] == "") {
+      manifest["mod_name"] = (itoFiles.length == 1 && firstItemName != null) ? firstItemName : modId;
     }
 
     await jsonFile.writeAsString(JsonEncoder.withIndent('  ').convert(manifest));
