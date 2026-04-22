@@ -1,0 +1,6 @@
+name: woh_mod_translator
+description: Herramienta de traducción para Mods de World of Horror.
+version: 1.0.0
+
+environment:
+  sdk: ^3.11.5
