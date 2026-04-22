@@ -1,15 +1,53 @@
 import 'dart:convert';
 import 'dart:io';
 
-final Set<String> _translatableKeys = {
-  'name', 'subtitle', 'intro', 'flavor', 'about', 'menu_desc', 'bio',
-  'description', 'text_one', 'text_two', 'text_thr', 'text_fou',
-  'hit01', 'hit02', 'hit03',
+// 1. EVENTOS
+final Set<String> _eventKeys = {
+  'name', 'author', 'flavor', 'about',
   'optiona', 'optionb', 'optionc',
   'successa', 'successb', 'successc',
   'failurea', 'failureb', 'failurec',
+  'a_locked', 'b_locked', 'c_locked',
+};
+
+// 2. ENEMIGOS
+final Set<String> _enemyKeys = {
+  'name', 'subtitle', 'author', 'intro',
+  'hit01', 'hit02', 'hit03',
+};
+
+// 3. PERSONAJES
+final Set<String> _characterKeys = {
+  'name', 'author',
+  'name_a', 'name_b',
+  'menu_tag', 'menu_desc', 'bio',
+};
+
+// 4. MISTERIOS
+final Set<String> _mysteryKeys = {
+  'name', 'author', 'description',
+  'flavor', 'tags',
+  'text_one', 'text_two', 'text_thr', 'text_fou',
+  'location', // solo se usa para Misterios
   'one_txt', 'two_txt', 'thr_txt', 'fou_txt', 'fiv_txt', 'six_txt', 'sev_txt', 'eig_txt', 'nin_txt', 'ten_txt',
-  'end_txt', 'end_txta', 'end_txtb', 'end_txtc', 'end_txtd'
+  'end_title', 'end_txt', 'end_txta', 'end_txtb', 'end_txtc', 'end_txtd'
+};
+
+// Lista de valores de 'location' que son código interno y no deben traducirse.
+final Set<String> _nonTranslatableLocations = {
+  'school', 'seaside', 'mansion', 'downtown', 'hospital', 'forest', 'village',
+  'apartment', 'atorasu', 'ithotu', 'athyola', 'gozu', 'ygothaeg', 'schoolhospital',
+  'seasideforest', 'global', 'otherworld', 'herald', 'kturufu', 'zhectast', 'ehzhal', 'linked'
+};
+
+// 5. FALLBACK
+// Si un archivo .ito está mal formateado y no tiene etiqueta principal, usamos
+// todas las claves, pero 'location' se filtrará usando la lista de arriba.
+final Set<String> _fallbackKeys = {
+  ..._eventKeys,
+  ..._enemyKeys,
+  ..._characterKeys,
+  ..._mysteryKeys,
 };
 
 final RegExp _itoLineRegex = RegExp(r'^([a-zA-Z0-9_]+)="(.*)"$');
@@ -54,6 +92,20 @@ String _basenameWithoutExtension(String path) {
   return lastDotIndex != -1 ? base.substring(0, lastDotIndex) : base;
 }
 
+/// Lee el contenido de un archivo manejando posibles problemas de codificación (BOM/UTF-8)
+Future<List<String>> _readLinesSafely(File file) async {
+  final bytes = await file.readAsBytes();
+  String content = utf8.decode(bytes, allowMalformed: true);
+
+  // Elimina el BOM (Byte Order Mark) si está presente al inicio del archivo
+  if (content.startsWith('\uFEFF')) {
+    content = content.substring(1);
+  }
+
+  // Divide por saltos de línea compatibles con Windows (\r\n) o Linux (\n)
+  return content.split(RegExp(r'\r?\n'));
+}
+
 /// Escanea las carpetas de mods, detecta archivos .ito y genera o actualiza
 /// archivos JSON en el directorio de localización con las claves traducibles.
 Future<void> _extractToL10n(Directory modsDir, Directory l10nDir) async {
@@ -96,26 +148,53 @@ Future<void> _extractToL10n(Directory modsDir, Directory l10nDir) async {
       filesMap[relativePath] ??= <String, dynamic>{};
       final fileData = filesMap[relativePath] as Map<String, dynamic>;
 
-      for (final line in await itoFile.readAsLines()) {
-        final match = _itoLineRegex.firstMatch(line.trim());
+      final lines = await _readLinesSafely(itoFile);
+
+      // Asumimos el grupo comodín por defecto
+      Set<String> activeKeys = _fallbackKeys;
+
+      for (final line in lines) {
+        final trimmedLine = line.trim();
+
+        // Detectar el tipo de archivo dinámicamente y asignar el set correcto
+        if (trimmedLine == '[event]') {
+          activeKeys = _eventKeys;
+        } else if (trimmedLine == '[enemy]') {
+          activeKeys = _enemyKeys;
+        } else if (trimmedLine == '[character]') {
+          activeKeys = _characterKeys;
+        } else if (trimmedLine == '[mystery]') {
+          activeKeys = _mysteryKeys;
+        }
+
+        final match = _itoLineRegex.firstMatch(trimmedLine);
         if (match != null) {
           final key = match.group(1)!;
           final value = match.group(2)!;
 
-          if (key == 'author' && manifest["author_original"] == "")
+          if (key == 'author' && manifest["author_original"] == "") {
             manifest["author_original"] = value;
-          if (key == 'name' && manifest["mod_name"] == "Nombre del Mod")
+          }
+          if (key == 'name' && manifest["mod_name"] == "Nombre del Mod") {
             manifest["mod_name"] = value;
+          }
 
-          if (_translatableKeys.contains(key)) {
+          if (activeKeys.contains(key)) {
+            // EXCEPCIÓN: Si la clave es 'location', verificar que su VALOR
+            // no sea uno de los códigos internos del juego.
+            if (key == 'location' && _nonTranslatableLocations.contains(value)) {
+              // Es un código interno, no hacer nada y continuar con la siguiente línea.
+              continue; 
+            }
+
+            // Si pasa el filtro, es una clave traducible.
             if (!fileData.containsKey(key)) {
               fileData[key] = {"original": value, "l10n": ""};
               keysExtracted++;
             } else if (fileData[key]["original"] != value) {
-              // El autor actualizó el mod, se sobrescribe el original para que
-              // concuerde con el estado actual del .ito sin borrar la traducción actual ("l10n").
+              // El autor actualizó el mod, se sobrescribe el original para que concuerde.
               fileData[key]["original"] = value;
-              print("  [AVISO] El texto original de '$key' en '$relativePath' ha cambiado tras una actualización del mod.");
+              print("  [AVISO] El texto original de '$key' en '$relativePath' ha cambiado tras una actualización.");
             }
           }
         }
@@ -168,7 +247,9 @@ Future<void> _injectToMods(Directory modsDir, Directory l10nDir) async {
       List<String> newLines = [];
       bool modified = false;
 
-      for (final line in await itoFile.readAsLines()) {
+      final lines = await _readLinesSafely(itoFile);
+
+      for (final line in lines) {
         final match = _itoLineRegex.firstMatch(line.trim());
 
         if (match != null) {
@@ -210,6 +291,7 @@ Future<void> _injectToMods(Directory modsDir, Directory l10nDir) async {
       }
 
       if (modified) {
+        // Guardar de vuelta con saltos de línea estándar de Windows, que usa WoH
         await itoFile.writeAsString(newLines.join('\r\n'));
         filesModified++;
       }
