@@ -1,0 +1,841 @@
+{
+  "mod_id": "modding",
+  "mod_name": "Paquete de mods comunitario",
+  "mod_url": "https://wohgame.com/modding.zip",
+  "authors": [
+    "Canti",
+    "Grug",
+    "ProbablySomebody",
+    "nothingxs",
+    "panstasz",
+    "RacWade",
+    "Haspen",
+    "rungle",
+    "astrid",
+    "Externica",
+    "kharduhn",
+    "Lastdancer",
+    "Uverlink"
+  ],
+  "translator": "Zeedif",
+  "files": {
+    "custom/aggressiveman.ito": {
+      "name": {
+        "original": "AGGRESSIVE PASSERBY",
+        "l10n": "TRANSEÚNTE AGRESIVO"
+      },
+      "flavor": {
+        "original": "As you inspect a marking on a wall, a random man shouts at you, hurling insults at you and requesting a fight.#He appears to be delirious, probably under the effects of some kind of drug.",
+        "l10n": "Mientras inspeccionas una marca en la pared, un transeúnte te grita, lanzándote insultos y retándote a una pelea.#Parece estar delirando, probablemente bajo los efectos de algún medicamento o droga."
+      },
+      "about": {
+        "original": "Someone's out of his mind. Calm him down.",
+        "l10n": "Alguien ha perdido la cabeza. Cálmalo."
+      },
+      "optiona": {
+        "original": "Ask him to move out of the way",
+        "l10n": "Pedirle que se haga a un lado"
+      },
+      "successa": {
+        "original": "Despite his altered state, the man hears you out as you calmly explain you just want to pass through and takes a step to the side, althrough reluctantly.",
+        "l10n": "A pesar de su estado alterado, el hombre te escucha mientras le explicas con calma que solo quieres pasar y aunque de mala gana, da un paso al costado."
+      },
+      "failurea": {
+        "original": "The man refuses to listen to you talk and throws a few sloppy punches.#While the first one takes you by surprise, you avoid the others and shove him out of the way while he's off-balance.",
+        "l10n": "El hombre se niega a escucharte y te lanza algunos golpes desordenados.#Aunque el primero te toma por sorpresa, evitas los demás y lo empujas fuera del camino mientras está desequilibrado."
+      },
+      "optionb": {
+        "original": "Intimidate him",
+        "l10n": "Intimidarlo"
+      },
+      "successb": {
+        "original": "Looking to scare him away, you put on your most gravelous tone and flex your muscles.#He scurries away almost immediately, accidentally dropping his wallet.#It contains nothing but some coins.. might as well take it.",
+        "l10n": "Tratando de ahuyentarlo, pones tu tono más grave y flexionas los músculos.#Él sale corriendo casi de inmediato, dejando caer accidentalmente su billetera.#Solo contiene algunas monedas... podrías tomarlas."
+      }
+    },
+    "custom/CeilingGirl.ito": {
+      "name": {
+        "original": "CEILING GIRL",
+        "l10n": "CHICA DEL TECHO"
+      },
+      "flavor": {
+        "original": "A filthy girl in a patient gown walks along the ceiling towards you. 'Why is everyone standing the wrong way? It's so much better where I am. Join me!'##You begin floating.",
+        "l10n": "Una chica sucia con una bata de paciente camina por el techo hacia ti.##“¿Por qué todos están parados al revés? Es mucho mejor donde yo estoy. ¡Únete a mí!”#Comienzas a flotar."
+      },
+      "about": {
+        "original": "CEILING GIRL",
+        "l10n": "Encuentras a una chica caminando por el techo."
+      },
+      "optiona": {
+        "original": "Stand Upside Down?",
+        "l10n": "¿Pararte boca abajo?"
+      },
+      "successa": {
+        "original": "You somersault in space and gently float to the ceiling. Or is it the floor now? 'Finally I have a playmate!' says the girl with a toothy grin.",
+        "l10n": "Das una voltereta en el aire y flotas suavemente hacia el techo. ¿O es el piso ahora?##“¡Al fin tengo un compañero de juegos!” dice la chica con una amplia sonrisa llena de dientes."
+      },
+      "failurea": {
+        "original": "You contort yourself to match the girl's perspective. You are overwhelmed by a wave of vertigo as you get lost in an empty room. Which way is really up?",
+        "l10n": "Te contorsionas para coincidir con la perspectiva de la chica. Te abruma una ola de vértigo al perderte en la habitación vacía.##¿Hacia dónde es realmente arriba?"
+      },
+      "optionb": {
+        "original": "Stand Downside Up?",
+        "l10n": "¿Pararte boca arriba?"
+      },
+      "successb": {
+        "original": "You contort yourself to match the girl's perspective. You are overwhelmed by a wave of vertigo as you get lost in an empty room. Which way is really up? Have you been wrong your entire life?",
+        "l10n": "Te contorsionas para coincidir con la perspectiva de la chica. Te abruma una ola de vértigo al perderte en la habitación vacía.##¿Hacia dónde es realmente arriba? ¿Has estado equivocado toda tu vida?"
+      },
+      "failureb": {
+        "original": "What's this? Why, you're already standing downside up. You tell the girl that things are perfect as they are.",
+        "l10n": "¿Qué es esto? Ah, ya estás parado boca arriba. Le dices a la chica que las cosas son perfectas tal como están."
+      }
+    },
+    "custom/ConflipOfFate.ito": {
+      "name": {
+        "original": "COINFLIP OF FATE",
+        "l10n": "MONEDA DEL DESTINO"
+      },
+      "flavor": {
+        "original": "You discover a large rotting trunk covered in rusted chains. As you approach the bonds break and a large sandstone disc catapults out, covered in hieroglyphics.##It seems to be seeking you out.",
+        "l10n": "Descubres un gran baúl podrido cubierto de cadenas oxidadas. A medida que te acercas, las ataduras se rompen y un gran disco de piedra arenisca sale catapultado, cubierto de jeroglíficos.##Parece estar buscándote."
+      },
+      "about": {
+        "original": "COINFLIP OF FATE",
+        "l10n": "MONEDA DEL DESTINO"
+      },
+      "optiona": {
+        "original": "pray for heads",
+        "l10n": "Rezar por Cara"
+      },
+      "successa": {
+        "original": "With a crash, the disc lands Heads side up.##You are filled with calm and certainty.",
+        "l10n": "Con un estruendo, el disco cae con la Cara hacia arriba.##Te sientes lleno de calma y certeza."
+      },
+      "failurea": {
+        "original": "With a crash, the disc lands Tails side up.##All light bleeds from the room and you are wracked with despair.",
+        "l10n": "Con un estruendo, el disco cae con la Cruz hacia arriba.##Toda la luz se desvanece de la habitación y te sientes consumido por la desesperación."
+      },
+      "optionb": {
+        "original": "pray for tails",
+        "l10n": "Rezar por Cruz"
+      },
+      "successb": {
+        "original": "With a crash, the disc lands Heads side up.##All light bleeds from the room and you are wracked with despair.",
+        "l10n": "Con un estruendo, el disco cae con la Cara hacia arriba.##Toda la luz se desvanece de la habitación y te sientes consumido por la desesperación."
+      },
+      "failureb": {
+        "original": "With a crash, the disc lands Tails side up.##You are filled with calm and certainty.",
+        "l10n": "Con un estruendo, el disco cae con la Cruz hacia arriba.##Te sientes lleno de calma y certeza."
+      }
+    },
+    "custom/evt_abandonedwallet.ito": {
+      "name": {
+        "original": "ABANDONED WALLET",
+        "l10n": "CARTERA ABANDONADA"
+      },
+      "flavor": {
+        "original": "While taking a stroll through downdown during your investigations, you find an abandoned wallet laying on a bench.#You see no one else around.",
+        "l10n": "Mientras das un paseo por el centro durante tus investigaciones, encuentras una cartera abandonada en un banco.#No ves a nadie más a tu alrededor."
+      },
+      "about": {
+        "original": "You encounter a young TV reporter.",
+        "l10n": "Encuentras una cartera sola."
+      },
+      "optiona": {
+        "original": "try to return it",
+        "l10n": "Intentar devolverla"
+      },
+      "successa": {
+        "original": "You are able to successfully find and return the wallet to its owner.## The person you return it is surprisingly helpful to your investigation.",
+        "l10n": "Logras encontrar a su dueño y le devuelves la cartera.##La persona resulta ser sorprendentemente útil para tu investigación."
+      },
+      "failurea": {
+        "original": "You look around for the whole night to find the wallet's owner, but gain nothing for it.## You return home exhausted.",
+        "l10n": "Buscas al dueño de la cartera durante toda la noche, pero no logras nada.##Regresas a casa exhausto."
+      },
+      "optionb": {
+        "original": "take it for yourself",
+        "l10n": "Quedártela"
+      },
+      "successb": {
+        "original": "The wallet is filled with cash. ## You take the money and run before anyone sees you do it.",
+        "l10n": "La cartera está llena de dinero.##Tomas los billetes y te vas antes de que alguien te vea."
+      },
+      "failureb": {
+        "original": "As you pick up the wallet, it somehow leaves a stain that you can't get off.## The wallet itself is empty.",
+        "l10n": "Al recoger la cartera, de alguna manera te deja una mancha que no puedes quitar.##Además, está vacía."
+      },
+      "optionc": {
+        "original": "leave it alone",
+        "l10n": "Dejarla"
+      },
+      "successc": {
+        "original": "You waste no time leaving the wallet behind. ## You feel like you should have done something, but there are more important things to do.",
+        "l10n": "No pierdes tiempo y dejas la cartera atrás.##Sientes que deberías haber hecho algo, pero hay cosas más importantes que hacer."
+      },
+      "failurec": {
+        "original": "",
+        "l10n": ""
+      }
+    },
+    "custom/evt_apondintheforest.ito": {
+      "name": {
+        "original": "A POND IN THE FOREST",
+        "l10n": "UN ESTANQUE EN EL BOSQUE"
+      },
+      "about": {
+        "original": "An unusual pond in the forest, waiting to be explored.",
+        "l10n": "Un estanque inusual en el bosque espera ser explorado."
+      },
+      "flavor": {
+        "original": "The monotony of the forest is broken up by a small pond sitting in a gap between the trees. It teems with life, with a few lotus lily pads floating near the edges and long grass poking out from under the surface.##However, at its center, you notice a very slow but seemingly steady stream of bubbles climbing to the surface...",
+        "l10n": "La monotonía del bosque se interrumpe por un pequeño estanque situado en un claro entre los árboles. Está lleno de vida, con algunos nenúfares flotando cerca de los bordes y hierba alta asomando bajo la superficie.##Sin embargo, en su centro, notas un flujo muy lento pero constante de burbujas que suben a la superficie..."
+      },
+      "optiona": {
+        "original": "investigate the bubbles",
+        "l10n": "Investigar las burbujas"
+      },
+      "successa": {
+        "original": "You wade into the lake, dragging yourself through the thick mud floor in labored steps. You eventually reach the source of the bubbles and almost stumble when you find a rotting body half-buried in the mud.#You drag the body to the side of the pond, observing the many markings and the robe he was wearing. Was this cultist a sacrifice...?",
+        "l10n": "Te adentras en el estanque, avanzando a duras penas a través del espeso fango. Finalmente llegas a la fuente de las burbujas y casi tropiezas al encontrar un cuerpo putrefacto medio enterrado.#Arrastras el cuerpo hasta el borde, observando las numerosas marcas y la túnica que llevaba puesta. ¿Acaso este cultista fue un sacrificio...?"
+      },
+      "failurea": {
+        "original": "You wade into the lake, dragging yourself through the thick mud floor in labored steps. You eventually reach the source of the bubbles and almost stumble when you find a rotting body half-buried in the mud.#Try as you might, however, you cannot make it budge, and you eventually make your way back, laying on the shore, having sprained your back. It's time to keep moving.",
+        "l10n": "Te adentras en el estanque, avanzando a duras penas a través del espeso fango. Finalmente llegas a la fuente de las burbujas y casi tropiezas al encontrar un cuerpo putrefacto medio enterrado.#Por más que lo intentas, no logras moverlo, y finalmente regresas, tumbándote en la orilla tras lastimarte la espalda. Es hora de seguir adelante."
+      },
+      "optionb": {
+        "original": "check out the lotus lilies",
+        "l10n": "Examinar los nenúfares"
+      },
+      "successb": {
+        "original": "You walk over the edge of the lake to look through the lilypads.#Among the green, you notice what looks like a rotten, marked hand, sticking just slightly out of the water, the site of someone's unfortunate demise. A sacrifice...?",
+        "l10n": "Te acercas al borde del estanque para examinar los nenúfares.#Entre el verde, notas lo que parece una mano podrida y marcada, asomando ligeramente fuera del agua, el lugar de la desafortunada muerte de alguien. ¿Un sacrificio...?"
+      },
+      "failureb": {
+        "original": "You walk over to the edge of the lake and look through the lilypads, admiring their beauty and ignoring the rest of the pond before moving on with your investigation.",
+        "l10n": "Te acercas al borde del estanque y examinas los nenúfares, admirando su belleza e ignorando el resto del agua antes de continuar con tu investigación."
+      }
+    },
+    "custom/evt_aquarium.ito": {
+      "name": {
+        "original": "AQUARIUM",
+        "l10n": "ACUARIO"
+      },
+      "flavor": {
+        "original": "In one of the rooms, you discover a giant, slime-coated aquarium. Its water is cloudy, but you can swear something is swimming in it.",
+        "l10n": "En una de las habitaciones, descubres un acuario gigante cubierto de baba. Su agua está turbia, pero jurarías que algo está nadando en él."
+      },
+      "optiona": {
+        "original": "take a closer look",
+        "l10n": "Mirar más de cerca"
+      },
+      "successa": {
+        "original": "The fish seem to be unaffected by the weird water, lazily swimming around. You feel like you shouldn't stay here for too long and retreat slowly.",
+        "l10n": "Los peces parecen no verse afectados por el agua extraña, nadando perezosamente. Sientes que no deberías quedarte aquí por mucho tiempo y te retiras lentamente."
+      },
+      "failurea": {
+        "original": "Something is wrong with this aquarium. The fish are deformed, some having two tails, extra fins, or... human faces.",
+        "l10n": "Algo está mal en este acuario. Los peces están deformados, algunos tienen dos colas, aletas extra o... rostros humanos."
+      },
+      "about": {
+        "original": "Example of an event with 1 option with generic art.",
+        "l10n": "Ejemplo de un evento con una opción y arte genérico."
+      }
+    },
+    "custom/evt_eightfeettall.ito": {
+      "name": {
+        "original": "EIGHT FEET TALL",
+        "l10n": "OCHO PIES DE ALTURA"
+      },
+      "flavor": {
+        "original": "As you pass by a row of large hedges, a woman in a white dress and a broad-brimmed hat leans over one, and addresses you. #'Excuse me... do you know the way into town?'##Something about her smile bothers you...",
+        "l10n": "Al pasar junto a una fila de grandes setos, una mujer con un vestido blanco y un sombrero de ala ancha se asoma sobre uno de ellos y te habla.##“Disculpe... ¿sabe cómo llegar al pueblo?”#Algo en su sonrisa te incomoda..."
+      },
+      "about": {
+        "original": "A strange woman asks for directions.",
+        "l10n": "Una mujer extraña pide direcciones."
+      },
+      "optiona": {
+        "original": "give her directions",
+        "l10n": "Darle indicaciones"
+      },
+      "successa": {
+        "original": "You give her directions, and leave hurriedly, hoping to be rid of her.##It's only after you're well away, her strange laughter ringing in your ears, that you begin to wonder how tall she must have really been to tower over those hedges.",
+        "l10n": "Le das indicaciones y te vas apresuradamente, esperando deshacerte de ella.#Es solo al alejarte, con su extraña risa resonando en tus oídos, que empiezas a preguntarte cuán alta debía ser realmente para sobresalir por encima de esos setos."
+      },
+      "failurea": {
+        "original": "",
+        "l10n": ""
+      },
+      "optionb": {
+        "original": "lie",
+        "l10n": "Mentirle"
+      },
+      "successb": {
+        "original": "You give her some plausible directions that will keep her busy for hours.##As the woman thanks you and departs, you wonder what disaster you may have just averted.",
+        "l10n": "Le das unas indicaciones falsas muy plausibles que la mantendrán ocupada durante horas.#Mientras la mujer te lo agradece y se marcha, te preguntas qué clase de desastre podrías haber evitado."
+      },
+      "failureb": {
+        "original": "You attempt to make up some false directions, but your parched throat gives away your intent.#The woman just smiles knowingly.#'What a funny person... I'll have to keep my eye on you. Po po po.'##You don't like the sound of that...",
+        "l10n": "Intentas inventar algunas direcciones falsas, pero tu garganta reseca revela tus intenciones.#La mujer simplemente sonríe a sabiendas.##“Qué persona tan graciosa... Tendré que mantenerte vigilado. Po po po.”#No te gusta cómo suena eso..."
+      }
+    },
+    "custom/evt_elevatorgraffiti.ito": {
+      "name": {
+        "original": "ELEVATOR GRAFFITI",
+        "l10n": "GRAFITI EN EL ASCENSOR"
+      },
+      "flavor": {
+        "original": "Someone has spray-painted all surfaces of an elevator. Black lines don't seem to make any recognizable shape. Elevator itself appears to be working just fine, but something about the art makes you feel uneasy.",
+        "l10n": "Alguien ha pintado con aerosol todas las superficies de un ascensor. Las líneas negras no parecen formar ninguna figura reconocible. El ascensor en sí parece funcionar bien, pero algo en este arte te hace sentir incómodo."
+      },
+      "optiona": {
+        "original": "ride the elevator",
+        "l10n": "Usar el ascensor"
+      },
+      "successa": {
+        "original": "You close your eyes, and when you open them, you arrive at your destination.",
+        "l10n": "Cierras los ojos, y cuando los abres, has llegado a tu destino."
+      },
+      "failurea": {
+        "original": "Staring at the weird lines makes you feel dizzy. It intensifies into vertigo, and you must crawl out of the elevator, before vomiting on the floor.",
+        "l10n": "Mirar las extrañas líneas te hace sentir mareado. Se intensifica hasta convertirse en vértigo, y debes arrastrarte fuera del ascensor antes de vomitar en el suelo."
+      },
+      "optionb": {
+        "original": "on the second thought#let's take the stairs",
+        "l10n": "Pensándolo bien,#tomemos las escaleras"
+      },
+      "successb": {
+        "original": "You take the stairs, thinking about this weird case of vandalism.",
+        "l10n": "Tomas las escaleras, pensando en este extraño caso de vandalismo."
+      },
+      "failureb": {
+        "original": "",
+        "l10n": ""
+      },
+      "about": {
+        "original": "Example of an event with 2 options.",
+        "l10n": "Ejemplo de un evento con dos opciones."
+      }
+    },
+    "custom/evt_intersectioninterview.ito": {
+      "name": {
+        "original": "INTERSECTION INTERVIEW",
+        "l10n": "ENTREVISTA EN LA INTERSECCIÓN"
+      },
+      "flavor": {
+        "original": "'Hello, this is Hanae Kitamura of EdoTV!' You jump a little when the young reporter girl suddenly appears at your side along with a cameraman. #'We're doing a report on strange things occuring in Shiokawa in the recent days! Do you know anything about that?'",
+        "l10n": "“¡Hola, soy Hanae Kitamura de EdoTV!”#Das un pequeño salto cuando la joven reportera aparece repentinamente a tu lado junto a un camarógrafo.##“¡Estamos haciendo un reportaje sobre las cosas extrañas que han estado ocurriendo en Shiokawa estos últimos días! ¿Sabes algo al respecto?”"
+      },
+      "about": {
+        "original": "You encounter a young TV reporter.",
+        "l10n": "Te encuentras con una joven reportera de televisión."
+      },
+      "optiona": {
+        "original": "You bet I do!",
+        "l10n": "¡Claro que sí!"
+      },
+      "successa": {
+        "original": "You detail the most recent story you've heard, and both Hanae and the cameraman's faces pale as the story goes on. #After you finish, Hanae gulps in fear. 'Man, I thought it was just silly urban tale.' #She shudders. 'But if all you've said is true, the more people know about it, the better!'",
+        "l10n": "Detallas la historia más reciente que has escuchado, y los rostros de Hanae y el camarógrafo palidecen a medida que avanzas.#Después de que terminas, Hanae traga saliva con miedo.##“Vaya, pensé que era solo un tonto cuento urbano.”#Ella se estremece.#“¡Pero si todo lo que has dicho es cierto, cuanta más gente lo sepa, mejor!”"
+      },
+      "failurea": {
+        "original": "You try to sound as convincing as possible, but after a moment, Hanae cuts the interview short. #'Man, this is such crap. You think people would believe this?' #Hanae and her co-worker leave you at the intersection, unsure of what to think.",
+        "l10n": "Intentas sonar lo más convincente posible, pero después de un momento, Hanae corta la entrevista.##“Vaya, esto es pura basura. ¿Crees que la gente creería esto?”#Hanae y su compañero te dejan en la intersección, dudando de todo."
+      },
+      "optionb": {
+        "original": "Apologies, I don't #have time for this",
+        "l10n": "Lo siento, no tengo#tiempo para esto"
+      },
+      "successb": {
+        "original": "'No problem, man. See ya!' Hanae and her cameraman go on to accost some other passerby, while you continue on your way.",
+        "l10n": "“No hay problema. ¡Nos vemos!”#Hanae y su camarógrafo se van a acosar a otro transeúnte, mientras continúas tu camino."
+      },
+      "failureb": {
+        "original": "",
+        "l10n": ""
+      }
+    },
+    "custom/evt_mortalattempts.ito": {
+      "name": {
+        "original": "Mortal Attempts",
+        "l10n": "INTENTOS MORTALES"
+      },
+      "flavor": {
+        "original": "Walking to your destination you happened to see a team of firefighters trying to stop a fire inside of an alcohol store, the products inside possibly made the fire worse, one of the firefighters near the firetruck yelling into a walkie-talkie visibly panicked.",
+        "l10n": "Caminando hacia tu destino, ves a un equipo de bomberos tratando de apagar un incendio dentro de una licorería. Los productos en su interior posiblemente empeoraron las llamas. Uno de los bomberos cerca del camión grita por su walkie-talkie visiblemente nervioso."
+      },
+      "about": {
+        "original": "You encounter a store that has been set ablaze.",
+        "l10n": "Te encuentras con una tienda que ha sido incendiada."
+      },
+      "optiona": {
+        "original": "Stare into#the flames",
+        "l10n": "Mirar las#llamas"
+      },
+      "successa": {
+        "original": "You were able to make something out between the smoke and flames, a cultist sigil made out of several small sticks held together by string before you can look into it further a firefighter goes inside with a firehose and starts spraying it everywhere stopping the fire partly, but ruining the sigil.",
+        "l10n": "Pudiste distinguir algo entre el humo y las llamas, un sigilo de cultista hecho de varios palos pequeños atados con una cuerda. Antes de que puedas observarlo mejor, un bombero entra con una manguera y comienza a rociar agua por todas partes, deteniendo parcialmente el fuego, pero arruinando el sigilo."
+      },
+      "failurea": {
+        "original": "You try your hardest to make something out of the flames inside the store but don't see anything, suddenly a burst of smoke comes out of the building engulfing you in the black thick smoke.",
+        "l10n": "Haces todo lo posible por distinguir algo entre las llamas dentro de la tienda, pero no ves nada. De repente, una ráfaga de humo surge del edificio y te envuelve en un espeso y sofocante humo negro."
+      },
+      "optionb": {
+        "original": "Ask the panicked#firefighter what happened",
+        "l10n": "Preguntar al bombero#nervioso qué pasó"
+      },
+      "failureb": {
+        "original": "'Get the hell away civie, I have no time of your stupid questions!' he pushes you away from the firetruck leaving you with a lot of scenario's in your head what could have happened here...'",
+        "l10n": "“¡Lárgate de aquí, civil, no tengo tiempo para tus estúpidas preguntas!” te grita mientras te empuja lejos del camión de bomberos, dejándote con muchos escenarios en la cabeza sobre lo que podría haber pasado aquí..."
+      },
+      "optionc": {
+        "original": "Leave the#firefighters",
+        "l10n": "Dejar a los#bomberos"
+      },
+      "successc": {
+        "original": "Not wanting to bother the firefighters you leave them alone...",
+        "l10n": "No queriendo molestar más a los bomberos, los dejas solos con su labor..."
+      },
+      "failurec": {
+        "original": "",
+        "l10n": ""
+      }
+    },
+    "custom/evt_pillsbottles.ito": {
+      "name": {
+        "original": "PILLS AND BOTTLES",
+        "l10n": "PASTILLAS Y BOTELLAS"
+      },
+      "flavor": {
+        "original": "You've managed to sneak inside the now-closed pharmacy. Boxes of medicine and chemicals surround you in this cramped room. The pill bottle you were looking for is almost out of reach...",
+        "l10n": "Has logrado colarte en la farmacia, ahora cerrada. Cajas de medicinas y productos químicos te rodean en esta habitación estrecha. El frasco de pastillas que buscabas está casi fuera de tu alcance..."
+      },
+      "optiona": {
+        "original": "reach and grab it",
+        "l10n": "Alcanzarlo y#agarrarlo"
+      },
+      "successa": {
+        "original": "You grab the bottle and flee from the pharmacy. This will definitely help in your investigation.",
+        "l10n": "Agarras el frasco y huyes de la farmacia. Esto definitivamente te ayudará en tu investigación."
+      },
+      "failurea": {
+        "original": "You knock over a bottle of ammonia. Covered in chemical burns, you flee from the pharmacy before anyone arrives.",
+        "l10n": "Derramas accidentalmente un frasco de amoníaco. Cubierto de quemaduras químicas, huyes de la farmacia antes de que llegue alguien."
+      },
+      "about": {
+        "original": "Example of a full-art event.",
+        "l10n": "Ejemplo de un evento con arte completo."
+      }
+    },
+    "custom/evt_snakelady.ito": {
+      "name": {
+        "original": "SNAKE LADY",
+        "l10n": "SEÑORA SERPIENTE"
+      },
+      "flavor": {
+        "original": "'Excussse me!' you are stopped by an older lady. 'Could you help me with the sshopping bagss? They are sso heavy...' she says, pointing at two giant bags filled with packed meat.",
+        "l10n": "“¡Disssculpa!” te detiene una señora mayor.#“¿Podrías ayudarme con las bolsssas de la compra? Ssson tan pesssadas...” dice, señalando dos bolsas gigantes llenas de carne empacada."
+      },
+      "optiona": {
+        "original": "agree",
+        "l10n": "Aceptar"
+      },
+      "successa": {
+        "original": "The bags are heavy, and the meat is starting to smell. You decide to help the older lady and carry them to her house. Thankful, she forces some money into your hand and waves you goodbye.",
+        "l10n": "Las bolsas son muy pesadas y la carne ya empieza a oler. Decides ayudar a la señora mayor y llevarlas a su casa. Agradecida, te da algo de dinero en la mano y se despide."
+      },
+      "failurea": {
+        "original": "You decide to help the older lady. Her entire house has a weird smell, almost reptilian in nature. You don't see any pet snakes anywhere, though. Why does one grandma need so much fresh meat?...",
+        "l10n": "Decides ayudar a la señora mayor. Toda su casa tiene un olor extraño, casi reptiliano. Sin embargo, no ves ninguna serpiente mascota por ningún lado. ¿Para qué necesita una abuela tanta carne fresca?..."
+      },
+      "optionb": {
+        "original": "refuse",
+        "l10n": "Rechazar"
+      },
+      "successb": {
+        "original": "You excuse yourself and leave the older lady waiting.",
+        "l10n": "Te excusas cortésmente y dejas a la señora mayor esperando."
+      },
+      "failureb": {
+        "original": "",
+        "l10n": ""
+      },
+      "about": {
+        "original": "Example of an event with 2 options.",
+        "l10n": "Ejemplo de un evento con dos opciones."
+      }
+    },
+    "custom/evt_solitaryconfinement.ito": {
+      "name": {
+        "original": "SOLITARY CONFINEMENT",
+        "l10n": "CONFINAMIENTO SOLITARIO"
+      },
+      "flavor": {
+        "original": "Walking through the unused hospital floor, you discover something alarming. The door to a small empty room looks like it was forced open. The lock is completely broken. You look around before taking a closer look...",
+        "l10n": "Caminando por el piso en desuso del hospital, descubres algo alarmante. La puerta de una pequeña habitación vacía parece haber sido forzada. La cerradura está completamente rota. Miras a tu alrededor antes de acercarte a investigar..."
+      },
+      "optiona": {
+        "original": "what happened here?",
+        "l10n": "¿Qué pasó aquí?"
+      },
+      "successa": {
+        "original": "It seems like someone forced the door open with a crowbar or a similar tool. Telling yourself they probably just lost the keys and needed something from inside the room, you quickly leave the corridor.",
+        "l10n": "Parece que alguien forzó la puerta con una palanca o una herramienta similar. Convenciéndote de que probablemente el personal solo perdió las llaves y necesitaban algo del interior, abandonas rápidamente el pasillo."
+      },
+      "failurea": {
+        "original": "Weird marks around the lock and the walls... were they caused by large claws?! What did the hospital staff keep in this room?!",
+        "l10n": "Extrañas marcas alrededor de la cerradura y en las paredes... ¡¿Acaso fueron causadas por grandes garras?! ¡¿Qué diablos guardaba el personal del hospital en esta habitación?!"
+      },
+      "optionb": {
+        "original": "",
+        "l10n": ""
+      },
+      "successb": {
+        "original": "",
+        "l10n": ""
+      },
+      "failureb": {
+        "original": "",
+        "l10n": ""
+      },
+      "about": {
+        "original": "Example of an event with 1 option.",
+        "l10n": "Ejemplo de un evento con una opción."
+      }
+    },
+    "custom/evt_strangetape.ito": {
+      "name": {
+        "original": "STRANGE TAPE",
+        "l10n": "CINTA EXTRAÑA"
+      },
+      "flavor": {
+        "original": "The video store clerk insists you take a look at this weird tape he got. He won't take no for an answer.#It's hazy ... but you can make out a woman bound by ropes and suspended in midair. She's surrounded by hooded figures.#...are they _cutting_ her??",
+        "l10n": "El empleado del videoclub insiste en que veas esta rara cinta que consiguió. No aceptará un no por respuesta.#Se ve borroso... pero logras distinguir a una mujer atada con cuerdas y suspendida en el aire. Está rodeada por figuras encapuchadas.#... ¿¿la están _cortando_??"
+      },
+      "about": {
+        "original": "You watch a strange videotape.",
+        "l10n": "Ves una extraña cinta de video."
+      },
+      "optiona": {
+        "original": "leave the store",
+        "l10n": "Salir de la tienda"
+      },
+      "successa": {
+        "original": "Whatever else is on that tape, you really aren't interested.",
+        "l10n": "Sea lo que sea que haya en esa cinta, realmente no te interesa averiguarlo."
+      },
+      "failurea": {
+        "original": "",
+        "l10n": ""
+      },
+      "optionb": {
+        "original": "watch the tape",
+        "l10n": "Ver la cinta"
+      },
+      "successb": {
+        "original": "It's difficult to sit through, but you try to focus. Eventually you recognize the symbol they're carving into her stomach. The cult must have wanted you to see this tape!",
+        "l10n": "Es difícil de ver, pero intentas concentrarte. Finalmente reconoces el símbolo que le están tallando en el estómago. ¡El culto debió querer que vieras esta cinta!"
+      },
+      "failureb": {
+        "original": "You force yourself to watch. It's nasty, but it doesn't add up to anything useful. Sure looked real though...",
+        "l10n": "Te obligas a mirar. Es asqueroso y perturbador, pero no revela nada que te sea útil. Aunque sin duda, parecía muy real..."
+      }
+    },
+    "custom/evt_strangewoman.ito": {
+      "name": {
+        "original": "Strange Woman",
+        "l10n": "MUJER EXTRAÑA"
+      },
+      "flavor": {
+        "original": "Wandering through the forest, you encounter a woman stading under the tree. She looks at you and smiles. #'What's on your mind, dear?' she asks, as if she knew you.",
+        "l10n": "Paseando por el bosque, encuentras a una mujer parada bajo un árbol. Te mira fijamente y sonríe.##“¿Qué tienes en mente, querido?” pregunta, como si te conociera."
+      },
+      "about": {
+        "original": "You meet a woman in the woods.",
+        "l10n": "Te encuentras con una mujer en el bosque."
+      },
+      "optiona": {
+        "original": "tell that#everything is fine",
+        "l10n": "Decirle que#todo está bien"
+      },
+      "successa": {
+        "original": "'That's good.\" she replies warmly and walks away. #You, too, are on your way again.",
+        "l10n": "“Eso es bueno”, responde cálidamente antes de alejarse.#Tú también continúas tu camino."
+      },
+      "failurea": {
+        "original": "Cracks appear on her face, as if something smashed it with brute force. #'Don't lie to me\" she roars like a wild beast. #Terrified, you run away from the scene as fast as you can.",
+        "l10n": "Aparecen grietas en su rostro, como si algo lo hubiera golpeado con fuerza bruta.##“¡No me mientas!” ruge como una bestia salvaje.#Aterrorizado, huyes del lugar lo más rápido que puedes."
+      },
+      "optionb": {
+        "original": "tell what's#troubling you",
+        "l10n": "Contarle qué te#está preocupando"
+      },
+      "failureb": {
+        "original": "'I know. Watching your struggle is indeed fascinating.' the womans replies oddly calm, her face vibrating, chracking and her smile turning into a malevolent grin. #You back away in shock, realizing this woman isn't human.",
+        "l10n": "“Lo sé. Ver tu lucha es realmente fascinante”, responde la mujer con una calma extraña. Su rostro vibra y se agrieta, transformando su sonrisa en una mueca malévola.#Retrocedes en shock, dándote cuenta de que esta mujer no es humana."
+      },
+      "optionc": {
+        "original": "tell that you are#lost in the woods",
+        "l10n": "Decirle que estás#perdido en el bosque"
+      },
+      "successc": {
+        "original": "Gracefully, the woman points to her left.# 'The village is over there' she replies friendly.# You thank her as your ways part.",
+        "l10n": "Con gracia, la mujer señala a su izquierda.##“El pueblo está por allí”, responde amigablemente.#Le agradeces mientras sus caminos se separan."
+      },
+      "failurec": {
+        "original": "",
+        "l10n": ""
+      }
+    },
+    "custom/evt_theoldbaba.ito": {
+      "name": {
+        "original": "THE OLD BABA",
+        "l10n": "LA VIEJA BABA"
+      },
+      "flavor": {
+        "original": "Walking through the village, you spot a very, very old lady who's staring at you. Curious, you approach her.#'Hello, sweetheart.' she croaks most happily.#'I'm returning home right now and was wondering if you would like to accompany me for second breakfast? Or maybe you would like some tea?'",
+        "l10n": "Caminando por el pueblo, ves a una señora muy, muy mayor que te mira fijamente. Curioso, te acercas.##“Hola, cariño”, croa con extrema alegría.#“Voy de regreso a casa y me preguntaba si te gustaría acompañarme a comer algo. ¿O tal vez prefieres tomar un poco de té?”"
+      },
+      "about": {
+        "original": "You encounter an old lady.",
+        "l10n": "Te encuentras con una anciana."
+      },
+      "optiona": {
+        "original": "Second breakfast#sounds nice.",
+        "l10n": "Comer algo#suena bien."
+      },
+      "successa": {
+        "original": "At the old woman's home, you're treated to some ramen, fried fish and rice cakes. This simple, yet delicious home-made meal invigorates you.",
+        "l10n": "En la casa de la anciana, te ofrecen ramen, pescado frito y pasteles de arroz. Esta comida casera, sencilla pero deliciosa, te da vigor."
+      },
+      "failurea": {
+        "original": "",
+        "l10n": ""
+      },
+      "optionb": {
+        "original": "Tea? I love tea!",
+        "l10n": "¿Té? ¡Me encanta el té!"
+      },
+      "successb": {
+        "original": "At the old woman's home, you're given some hot tea. As you two sip your hot drinks, she recalls a local folk legend, which surprisingly nets you some useful information.",
+        "l10n": "En la casa de la anciana, te sirven un poco de té caliente. Mientras ambos lo beben, ella recuerda una leyenda popular local que, sorprendentemente, te proporciona información útil."
+      },
+      "failureb": {
+        "original": "",
+        "l10n": ""
+      },
+      "optionc": {
+        "original": "No, thanks. I gotta go.",
+        "l10n": "No, gracias. Tengo que irme."
+      },
+      "successc": {
+        "original": "You refuse the invitation and hurriedly leave. Who was she? What did she want? Are you overthinking this? You don't know. Perhaps, you don't WANT to know...",
+        "l10n": "Rechazas la invitación y te vas apresuradamente. ¿Quién era ella? ¿Qué quería? ¿Estás pensando demasiado en esto? No lo sabes. Quizás, no QUIERES saberlo..."
+      },
+      "failurec": {
+        "original": "",
+        "l10n": ""
+      }
+    },
+    "custom/evt_toomuch.ito": {
+      "name": {
+        "original": "TOO MUCH",
+        "l10n": "DEMASIADO"
+      },
+      "flavor": {
+        "original": "You don't know exactly what happened. If it was you. What you have done. What you have seen. The only thing you know is that something inside you creaks. #And it has begun to break.'",
+        "l10n": "No sabes exactamente qué pasó. Si fuiste tú. Qué has hecho. Qué has visto. Lo único que sabes es que algo dentro de ti cruje.#Y que ha comenzado a romperse."
+      },
+      "about": {
+        "original": "You had enough. It's been too much.",
+        "l10n": "Ya has tenido suficiente. Ha sido demasiado."
+      },
+      "optiona": {
+        "original": "move on",
+        "l10n": "Seguir adelante"
+      },
+      "successa": {
+        "original": "Through the ordeal, you still manage to find new strenght. #Clench your teeth. Look forward. There's still much to be done.#(+20 EXPERIENCE)",
+        "l10n": "A pesar de la dura prueba, aún logras encontrar nuevas fuerzas.#Aprietas los dientes. Miras hacia adelante. Todavía hay mucho por hacer.#(+20 de EXPERIENCIA)"
+      },
+      "failurea": {
+        "original": "You can feel it. Your nerves snapping. Your gaze changing. You'll never be the same.#(+CURSE)",
+        "l10n": "Puedes sentirlo. Tus nervios rompiéndose. Tu mirada cambiando. Nunca volverás a ser el mismo.#(+MALDICIÓN)"
+      },
+      "optionb": {
+        "original": "let it flow",
+        "l10n": "Dejarlo fluir"
+      },
+      "failureb": {
+        "original": "Time has surely passed, but you can't tell how much. You stop sobbing, you wipe the tears in your face, and you loose your clenched fists. #Onwards.#(+2% DOOM)",
+        "l10n": "Sin duda ha pasado tiempo, pero no sabes cuánto. Dejas de sollozar, te limpias las lágrimas de la cara y aflojas tus puños apretados.#Adelante.#(+2% de CAOS)"
+      }
+    },
+    "custom/evt_weirdducts.ito": {
+      "name": {
+        "original": "WEIRD DUCTS",
+        "l10n": "DUCTOS EXTRAÑOS"
+      },
+      "flavor": {
+        "original": "Scratching and faint banging noise can be heard coming from the air-conditioning ducts.",
+        "l10n": "Se pueden escuchar ruidos de rasguños y golpes tenues provenientes de los conductos del aire acondicionado."
+      },
+      "optiona": {
+        "original": "rats, maybe?",
+        "l10n": "¿Ratas, tal vez?"
+      },
+      "successa": {
+        "original": "At first, you thought the noises were made by rats, but... rats don't whisper.",
+        "l10n": "Al principio pensaste que los ruidos eran hechos por ratas, pero... las ratas no susurran."
+      },
+      "failurea": {
+        "original": "",
+        "l10n": ""
+      },
+      "optionb": {
+        "original": "",
+        "l10n": ""
+      },
+      "successb": {
+        "original": "",
+        "l10n": ""
+      },
+      "failureb": {
+        "original": "",
+        "l10n": ""
+      },
+      "about": {
+        "original": "Example of an event with 1 option.",
+        "l10n": "Ejemplo de un evento con una opción."
+      }
+    },
+    "custom/pareidolia.ito": {
+      "name": {
+        "original": "Pareidolia",
+        "l10n": "PAREIDOLIA"
+      },
+      "flavor": {
+        "original": "The events you've witnessed lately have you tossing and turning, unable to sleep.##You feel restless.",
+        "l10n": "Los terribles eventos que has presenciado últimamente te tienen dando vueltas en la cama, incapaz de dormir.##Te sientes inquieto."
+      },
+      "about": {
+        "original": "Insomnia strikes; will fear take over?",
+        "l10n": "El insomnio ataca; ¿se apoderará de ti el miedo?"
+      },
+      "optiona": {
+        "original": "Try lying on your back",
+        "l10n": "Acostarte boca arriba"
+      },
+      "successa": {
+        "original": "As you stare ahead, your mind starts to fill in the gaps created by the ceiling patterns with shapes of otherworldly entities.##'Wait, is that...?## 'Could it be?!'",
+        "l10n": "Mientras fijas la mirada hacia arriba, tu mente comienza a llenar los vacíos creados por los patrones del techo con formas de entidades de otro mundo.##“Espera, ¿eso es...?”#“¡¿Acaso podría ser?!”"
+      },
+      "failurea": {
+        "original": "Staring at the ceiling proves itself as a source of sufficient boredom, and swiftly renders you asleep.",
+        "l10n": "Mirar fijamente al techo resulta ser una fuente de aburrimiento suficiente, y rápidamente te quedas dormido."
+      },
+      "optionb": {
+        "original": "Listen to some music",
+        "l10n": "Escuchar algo de música"
+      },
+      "successb": {
+        "original": "You finally nod off after finding a soothing choice in song.",
+        "l10n": "Finalmente te quedas dormido tras encontrar una canción bastante relajante."
+      },
+      "failureb": {
+        "original": "Finding an appropriate track proves to be more hassle than it was worth.#You end up losing daylight after struggling for hours.",
+        "l10n": "Encontrar una canción adecuada resulta ser más problemático de lo que vale la pena.#Termina cayendo la noche tras intentarlo durante horas."
+      }
+    },
+    "custom/public_computer_sleep.ito": {
+      "name": {
+        "original": "PUBLIC LIBRARY",
+        "l10n": "BIBLIOTECA PÚBLICA"
+      },
+      "flavor": {
+        "original": "Trying to find old newspapers in the Public Library archives, you mistakenly open a door to a small office.##It's dark and there is a girl slouching over her desk. Yet you could swear her computer screen moved.",
+        "l10n": "Tratando de encontrar periódicos antiguos en los archivos de la Biblioteca Pública, abres por error la puerta de una pequeña oficina.##Está a oscuras y hay una chica desplomada sobre su escritorio. Sin embargo, jurarías que la pantalla de su computadora acaba de moverse."
+      },
+      "about": {
+        "original": "Someone is sleeping here?",
+        "l10n": "¿Alguien está durmiendo aquí?"
+      },
+      "optiona": {
+        "original": "try to wake her up",
+        "l10n": "Intentar despertarla"
+      },
+      "successa": {
+        "original": "You try switching on the lights, the computer screen turns dark and she suddenly wakes up.##You notice feint traces of blood on her hands... but she doesn't seem to remember how it happened.",
+        "l10n": "Intentas encender las luces; la pantalla de la computadora se apaga y ella se despierta de repente.##Notas tenues rastros de sangre en sus manos... pero parece no recordar cómo ocurrió."
+      },
+      "failurea": {
+        "original": "You try to shake her up as you hear a feint sound of dripping.##Blood is falling on your shoes as you notice a dagger planted deep inside her rib cage. What could have happened here?",
+        "l10n": "Intentas sacudirla para despertarla mientras escuchas un leve sonido de goteo.##La sangre cae sobre tus zapatos al notar una daga clavada profundamente en su caja torácica. ¿Qué pudo haber pasado aquí?"
+      },
+      "optionb": {
+        "original": "take a peek at the screen",
+        "l10n": "Echar un vistazo a la pantalla"
+      },
+      "successb": {
+        "original": "You look at the screen as words appear.#'We know'#As you get the mouse back and scroll down, you find a list with different addresses where strange phenomena happened.##Now, you know.",
+        "l10n": "Miras la pantalla mientras aparecen palabras.#'Lo sabemos'#Al tomar el ratón y desplazarte hacia abajo, encuentras una lista con diferentes direcciones donde ocurrieron fenómenos extraños.##Ahora, lo sabes."
+      },
+      "failureb": {
+        "original": "An unknown fuild is splattered over the screen.##You suddenly hear screaming next to you, the girl is awake, her face carved by the shape of the hand, cutting deep her mouth and eyes in multiple places.",
+        "l10n": "Un fluido desconocido está salpicado sobre la pantalla.##De repente, escuchas gritos a tu lado; la chica está despierta. Su rostro parece haber sido esculpido a mano, múltiples cortes profundos en su boca y ojos."
+      },
+      "optionc": {
+        "original": "walk away",
+        "l10n": "Alejarte de ahí"
+      },
+      "successc": {
+        "original": "You let her rest, maybe she needs it.#The time spent in the Public Library went to waste.",
+        "l10n": "La dejas descansar, tal vez lo necesita.#El tiempo que pasaste en la Biblioteca Pública fue en vano."
+      },
+      "failurec": {
+        "original": "",
+        "l10n": ""
+      }
+    },
+    "custom/violin_concerto.ito": {
+      "name": {
+        "original": "VIOLIN CONCERTO",
+        "l10n": "CONCIERTO DE VIOLÍN"
+      },
+      "flavor": {
+        "original": "The music hall where student compete to go to the nationals is abnormally full today.##A young violinist is giving a staggering perfomance in the front of a committee and an amazed crowd.##Is it your friend on stage?",
+        "l10n": "La sala de música, donde los estudiantes compiten para ir a los campeonatos nacionales, está anormalmente llena hoy.##Una joven violinista está dando una actuación impresionante frente a un comité y una multitud asombrada.##¿Es tu amiga la que está en el escenario?"
+      },
+      "about": {
+        "original": "The sound of the violin.",
+        "l10n": "El sonido del violín."
+      },
+      "optiona": {
+        "original": "appreciate the show",
+        "l10n": "Apreciar el espectáculo"
+      },
+      "successa": {
+        "original": "You sit down to appreciate the performance, its warmth give you the strength to go forward.##Once the performance finishes, your friend waves at you. She seems happy to see you around.",
+        "l10n": "Te sientas a apreciar la actuación, su calidez te da la fuerza para seguir adelante.##Una vez que termina la presentación, tu amiga te saluda. Parece feliz de verte por aquí."
+      },
+      "failurea": {
+        "original": "Moving forward, you notice that everyone around you is livid. Looking left and right, the crowd seems to simply vanish.##There is no one here, this wing was closed off long ago. You realize that you broke in the concert hall and bruised your arms.",
+        "l10n": "Al avanzar, notas que todos a tu alrededor están pálidos. Mirando a izquierda y derecha, la multitud simplemente se desvanece.##No hay nadie aquí, esta ala fue clausurada hace mucho tiempo. Te das cuenta de que irrumpiste por la fuerza en la sala de conciertos y te magullaste los brazos."
+      },
+      "optionb": {
+        "original": "resist the enticing music",
+        "l10n": "Resistir la música tentadora"
+      },
+      "successb": {
+        "original": "You walk away as the music dies down in the distance.##You cannot shake off the feeling that there is something missing.",
+        "l10n": "Te alejas rápidamente mientras la música se desvanece en la distancia.##No puedes quitarte la sensación de que te falta algo."
+      },
+      "failureb": {
+        "original": "",
+        "l10n": ""
+      }
+    }
+  }
+}
